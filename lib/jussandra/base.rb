@@ -1,25 +1,25 @@
 require 'cassandra'
 require 'set'
-require 'cassandra_object/attributes'
-require 'cassandra_object/dirty'
-require 'cassandra_object/persistence'
+require 'jussandra/attributes'
+require 'jussandra/dirty'
+require 'jussandra/persistence'
 
 if Jussandra.old_active_support
-  require 'cassandra_object/legacy_callbacks'
+  require 'jussandra/legacy_callbacks'
 else
-  require 'cassandra_object/callbacks'
+  require 'jussandra/callbacks'
 end
 
-require 'cassandra_object/validation'
-require 'cassandra_object/identity'
-require 'cassandra_object/indexes'
-require 'cassandra_object/serialization'
-require 'cassandra_object/associations'
-require 'cassandra_object/migrations'
-require 'cassandra_object/cursor'
-require 'cassandra_object/collection'
-require 'cassandra_object/types'
-require 'cassandra_object/mocking'
+require 'jussandra/validation'
+require 'jussandra/identity'
+require 'jussandra/indexes'
+require 'jussandra/serialization'
+require 'jussandra/associations'
+require 'jussandra/migrations'
+require 'jussandra/cursor'
+require 'jussandra/collection'
+require 'jussandra/types'
+require 'jussandra/mocking'
 
 module Jussandra
   class Base
@@ -101,4 +101,4 @@ module Jussandra
   end
 end
 
-require 'cassandra_object/type_registration'
+require 'jussandra/type_registration'
