@@ -1,10 +1,10 @@
 require 'test_helper'
 
 module Identity
-  class NaturalKeyFactoryTest < CassandraObjectTestCase
+  class NaturalKeyFactoryTest < JussandraTestCase
     context "With one attribute" do
       setup do
-        @key_factory = CassandraObject::Identity::NaturalKeyFactory.new :attributes => :name
+        @key_factory = Jussandra::Identity::NaturalKeyFactory.new :attributes => :name
         @james = Person.new("name" => "james")
       end
 
@@ -32,7 +32,7 @@ module Identity
 
     context "With multiple attributes" do
       setup do
-        @key_factory = CassandraObject::Identity::NaturalKeyFactory.new :attributes => [:name, :age]
+        @key_factory = Jussandra::Identity::NaturalKeyFactory.new :attributes => [:name, :age]
         @james = Person.new("name" => "james", "age" => 23)
       end
 
@@ -60,7 +60,7 @@ module Identity
 
     context "With a custom separator" do
       setup do
-        @key_factory = CassandraObject::Identity::NaturalKeyFactory.new :attributes => [:name, :age],
+        @key_factory = Jussandra::Identity::NaturalKeyFactory.new :attributes => [:name, :age],
                                                                         :separator  => "#"
         @james = Person.new("name" => "james", "age" => 23)
       end
@@ -74,9 +74,9 @@ module Identity
 
     context "Natural keys" do
       setup do
-        @james         = CassandraObject::Identity::NaturalKeyFactory::NaturalKey.new("james")
-        @another_james = CassandraObject::Identity::NaturalKeyFactory::NaturalKey.new("james")
-        @joe           = CassandraObject::Identity::NaturalKeyFactory::NaturalKey.new("joe")
+        @james         = Jussandra::Identity::NaturalKeyFactory::NaturalKey.new("james")
+        @another_james = Jussandra::Identity::NaturalKeyFactory::NaturalKey.new("james")
+        @joe           = Jussandra::Identity::NaturalKeyFactory::NaturalKey.new("joe")
       end
 
       should "be equal, if their values are equal" do

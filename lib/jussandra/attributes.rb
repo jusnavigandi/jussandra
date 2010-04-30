@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   class Attribute
 
     attr_reader :name, :converter, :expected_type

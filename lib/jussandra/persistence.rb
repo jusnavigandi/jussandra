@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Persistence
     extend ActiveSupport::Concern
     included do

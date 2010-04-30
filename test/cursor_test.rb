@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CursorTest < CassandraObjectTestCase
+class CursorTest < JussandraTestCase
   
   context "A Cursor working with a Super Column with mixed valid / invalid keys" do
     setup do
@@ -61,6 +61,6 @@ class CursorTest < CassandraObjectTestCase
   end
   
   def invoices_cursor(options = {})
-    CassandraObject::Cursor.new(Invoice, Customer.associations[:invoices].column_family, @customer.key, "invoices", options)
+    Jussandra::Cursor.new(Invoice, Customer.associations[:invoices].column_family, @customer.key, "invoices", options)
   end
 end

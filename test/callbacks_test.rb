@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CallbacksTest < CassandraObjectTestCase
+class CallbacksTest < JussandraTestCase
   def setup
     super
   end

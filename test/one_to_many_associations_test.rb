@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OneToManyAssociationsTest < CassandraObjectTestCase
+class OneToManyAssociationsTest < JussandraTestCase
   
   context "A customer with an invoice added to its invoice association" do 
     setup do

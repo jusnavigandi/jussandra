@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Identity
     # An "interface" that keys need to implement
     # 

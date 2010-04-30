@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module IntegerType
     REGEX = /\A[-+]?\d+\Z/
     def encode(int)

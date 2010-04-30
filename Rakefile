@@ -16,24 +16,24 @@ Rake::TestTask.new(:legacy_test) do |t|
 end
 
 task :cleanup do
-  unless defined?(CassandraObject)
+  unless defined?(Jussandra)
     $: << 'test'
     $: << 'lib'
     require 'test_helper'
   end
   puts "Clearing keyspace! ..."
-  CassandraObject::Base.connection.clear_keyspace!
+  Jussandra::Base.connection.clear_keyspace!
   puts "Cleared"
 end
 
 task :config_snippet do
-  unless defined?(CassandraObject)
+  unless defined?(Jussandra)
     $: << 'test'
     $: << 'lib'
     require 'test_helper'
   end
   
-  puts CassandraObject::Base.storage_config_xml
+  puts Jussandra::Base.storage_config_xml
 end
 
 task :default=>[:test, :cleanup] do

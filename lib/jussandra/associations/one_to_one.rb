@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   class OneToOneAssociation
     def initialize(association_name, owner_class, options)
       @association_name  = association_name.to_s

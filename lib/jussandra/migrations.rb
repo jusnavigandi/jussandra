@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Migrations
     extend ActiveSupport::Concern
     included do

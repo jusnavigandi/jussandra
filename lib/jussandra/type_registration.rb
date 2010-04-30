@@ -1,0 +1,7 @@
+Jussandra::Base.register_attribute_type(:integer, Integer, Jussandra::IntegerType)
+Jussandra::Base.register_attribute_type(:float, Float, Jussandra::FloatType)
+Jussandra::Base.register_attribute_type(:date, Date, Jussandra::DateType)
+Jussandra::Base.register_attribute_type(:time, Time, Jussandra::TimeType)
+Jussandra::Base.register_attribute_type(:time_with_zone, ActiveSupport::TimeWithZone, Jussandra::TimeWithZoneType)
+Jussandra::Base.register_attribute_type(:string, String, Jussandra::StringType)
+Jussandra::Base.register_attribute_type(:hash, Hash, Jussandra::HashType)

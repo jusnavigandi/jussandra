@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Serialization
     extend ActiveSupport::Concern
     include ActiveModel::Serializers::JSON

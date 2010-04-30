@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class TimeTest < CassandraObjectTestCase
+class TimeTest < JussandraTestCase
 
   test "new raises an error" do
     begin
       appt = Appointment.new :start_time => 1
       flunk "Should have failed to save"
     rescue ArgumentError => e
-      assert_equal "CassandraObject::TimeType requires a Time", e.message
+      assert_equal "Jussandra::TimeType requires a Time", e.message
     end
   end
 
@@ -17,7 +17,7 @@ class TimeTest < CassandraObjectTestCase
       appt.start_time = 1
       flunk "Should have failed to save"
     rescue ArgumentError => e
-      assert_equal "CassandraObject::TimeType requires a Time", e.message
+      assert_equal "Jussandra::TimeType requires a Time", e.message
     end
   end
 

@@ -1,7 +1,7 @@
-require 'cassandra_object/associations/one_to_many'
-require 'cassandra_object/associations/one_to_one'
+require 'jussandra/associations/one_to_many'
+require 'jussandra/associations/one_to_one'
 
-module CassandraObject
+module Jussandra
   module Associations
     extend ActiveSupport::Concern
     

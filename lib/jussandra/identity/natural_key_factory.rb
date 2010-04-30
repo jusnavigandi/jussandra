@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Identity
     class NaturalKeyFactory < AbstractKeyFactory
       class NaturalKey
