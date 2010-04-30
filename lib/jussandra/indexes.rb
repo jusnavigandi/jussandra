@@ -68,7 +68,7 @@ module Jussandra
       end
       
       def new_key
-        Cassandra::SimpleUUID::UUID.new
+        SimpleUUID::UUID.new
       end
       
       def column_family_configuration
