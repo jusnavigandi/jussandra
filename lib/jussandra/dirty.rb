@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Dirty
     extend ActiveSupport::Concern
     include ActiveModel::Dirty

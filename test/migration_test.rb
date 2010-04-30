@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MigrationTest < CassandraObjectTestCase
+class MigrationTest < JussandraTestCase
   test "a new invoice should have the right schema version" do
     i = mock_invoice
     assert_equal 2, i.schema_version

@@ -1,5 +1,5 @@
 require 'cassandra/mock'
-module CassandraObject
+module Jussandra
   module Mocking
     extend ActiveSupport::Concern
     module ClassMethods

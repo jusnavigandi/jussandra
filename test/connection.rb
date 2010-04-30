@@ -14,7 +14,7 @@ if ENV['CASSANDRA_REQUIRED']
 end
 
 puts "Connecting..."
-CassandraObject::Base.establish_connection "CassandraObject"
+Jussandra::Base.establish_connection "Jussandra"
 
 if defined?($pid)
   at_exit do

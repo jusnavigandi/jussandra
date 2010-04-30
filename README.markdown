@@ -1,6 +1,6 @@
-# Cassandra Object
+# Jussandra
 
-Cassandra Object provides a nice API for working with [Cassandra](http://incubator.apache.org/cassandra/). CassandraObjects are mostly duck-type compatible with ActiveRecord objects so most of your controller code should work ok.  Note that they're *mostly* compatible, Cassandra has no support for dynamic queries, or sorting.  So the following kinds of operations aren't supported and *never will be*.
+Jussandra provides a nice API for working with [Cassandra](http://incubator.apache.org/cassandra/). Jussandra Objects are mostly duck-type compatible with ActiveRecord objects so most of your controller code should work ok.  Note that they're *mostly* compatible, Cassandra has no support for dynamic queries, or sorting.  So the following kinds of operations aren't supported and *never will be*.
 
 * `:order`
 * `:conditions`
@@ -9,7 +9,7 @@ Cassandra Object provides a nice API for working with [Cassandra](http://incubat
 
 There isn't much in the way of documentation yet, but a few examples.
 
-        class Customer < CassandraObject::Base
+        class Customer < Jussandra::Base
           attribute :first_name,    :type => :string
           attribute :last_name,     :type => :string
           attribute :date_of_birth, :type => :date
@@ -32,7 +32,7 @@ There isn't much in the way of documentation yet, but a few examples.
           end
         end
 
-        class Invoice < CassandraObject::Base
+        class Invoice < Jussandra::Base
           attribute :number, :type=>:integer
           attribute :total, :type=>:float
           attribute :gst_number, :type=>:string
@@ -64,7 +64,7 @@ There isn't much in the way of documentation yet, but a few examples.
 
 Here are some basic directions:
 
-  1. `git clone git://github.com/NZKoz/cassandra_object.git`
+  1. `git clone git://github.com/jusnavigandi/jussandra.git`
   2. Run the bundler `gem bundle`
   3. Make sure the tests pass `rake test`
 

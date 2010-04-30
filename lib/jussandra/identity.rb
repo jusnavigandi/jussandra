@@ -1,9 +1,9 @@
-require 'cassandra_object/identity/abstract_key_factory'
-require 'cassandra_object/identity/key'
-require 'cassandra_object/identity/uuid_key_factory'
-require 'cassandra_object/identity/natural_key_factory'
+require 'jussandra/identity/abstract_key_factory'
+require 'jussandra/identity/key'
+require 'jussandra/identity/uuid_key_factory'
+require 'jussandra/identity/natural_key_factory'
 
-module CassandraObject
+module Jussandra
   # Some docs will be needed here but the gist of this is simple.  Instead of returning a string, Base#key  now returns a key object.
   # There are corresponding key factories which generate them
   module Identity

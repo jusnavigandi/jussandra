@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Indexes
     extend ActiveSupport::Concern
     
@@ -49,7 +49,7 @@ module CassandraObject
       end
       
       def find(attribute_value, options = {})
-        cursor = CassandraObject::Cursor.new(@model_class, column_family, attribute_value.to_s, @attribute_name.to_s, :start_after=>options[:start_after], :reversed=>@reversed)
+        cursor = Jussandra::Cursor.new(@model_class, column_family, attribute_value.to_s, @attribute_name.to_s, :start_after=>options[:start_after], :reversed=>@reversed)
         cursor.validator do |object|
           object.send(@attribute_name) == attribute_value
         end

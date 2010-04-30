@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Validation
     class RecordInvalidError < StandardError
       attr_reader :record
@@ -16,7 +16,7 @@ module CassandraObject
     
     included do
       define_model_callbacks :validation
-      if CassandraObject.old_active_support
+      if Jussandra.old_active_support
         define_callbacks :validate
       else
         define_callbacks :validate, :scope => :name
@@ -48,7 +48,7 @@ module CassandraObject
         save || RecordInvalidError.raise_error(self)
       end
       
-      if CassandraObject.old_active_support
+      if Jussandra.old_active_support
         def _run_validate_callbacks
           run_callbacks :validate
         end

@@ -4,7 +4,7 @@ require 'cassandra_object/attributes'
 require 'cassandra_object/dirty'
 require 'cassandra_object/persistence'
 
-if CassandraObject.old_active_support
+if Jussandra.old_active_support
   require 'cassandra_object/legacy_callbacks'
 else
   require 'cassandra_object/callbacks'
@@ -21,7 +21,7 @@ require 'cassandra_object/collection'
 require 'cassandra_object/types'
 require 'cassandra_object/mocking'
 
-module CassandraObject
+module Jussandra
   class Base
     class_inheritable_accessor :connection
     class_inheritable_writer :connection_class
@@ -48,7 +48,7 @@ module CassandraObject
     end
     extend Naming
     
-    if CassandraObject.old_active_support
+    if Jussandra.old_active_support
       def self.lookup_ancestors
         super.select { |x| x.model_name.present? }
       end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IndexTest < CassandraObjectTestCase
+class IndexTest < JussandraTestCase
   context "A non-unique index" do
     setup do
       @last_name = ActiveSupport::SecureRandom.hex(5)

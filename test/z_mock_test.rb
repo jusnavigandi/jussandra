@@ -3,16 +3,16 @@
 
 require 'test_helper'
 
-class MockTest < CassandraObjectTestCase
-  context CassandraObject::Base do
+class MockTest < JussandraTestCase
+  context Jussandra::Base do
     should "respond to use_mock!" do
-      assert CassandraObject::Base.respond_to?(:use_mock!)
+      assert Jussandra::Base.respond_to?(:use_mock!)
     end
     context "use_mock!" do
       should "set the connection_class" do
-        CassandraObject::Base.use_mock!
-        assert_equal Cassandra::Mock, CassandraObject::Base.connection_class
-        CassandraObject::Base.use_mock!(false)
+        Jussandra::Base.use_mock!
+        assert_equal Cassandra::Mock, Jussandra::Base.connection_class
+        Jussandra::Base.use_mock!(false)
       end
     end
   end
@@ -20,12 +20,12 @@ end
 
 module MockTestMixin
   def setup
-    CassandraObject::Base.use_mock!
+    Jussandra::Base.use_mock!
     super
   end
 
   def teardown
-    CassandraObject::Base.use_mock!(false)
+    Jussandra::Base.use_mock!(false)
   end
 end
 

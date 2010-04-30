@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Callbacks
     extend ActiveSupport::Concern
 

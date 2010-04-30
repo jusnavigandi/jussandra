@@ -46,7 +46,7 @@
         <ColumnFamily CompareWith="UTF8Type" Name="Comments"/>
       </Keyspace>
 
-      <Keyspace Name="CassandraObject">
+      <Keyspace Name="Jussandra">
         <KeysCachedFraction>0.01</KeysCachedFraction>
         <ColumnFamily CompareWith="UTF8Type" Name="Customers" />
         <ColumnFamily CompareWith="UTF8Type" CompareSubcolumnsWith="TimeUUIDType" ColumnType="Super" Name="CustomerRelationships" />

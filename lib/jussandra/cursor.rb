@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   class Cursor
     def initialize(target_class, column_family, key, super_column, options={})
       @target_class  = target_class
@@ -11,7 +11,7 @@ module CassandraObject
     
     def find(number_to_find)
       limit       = number_to_find
-      objects     = CassandraObject::Collection.new
+      objects     = Jussandra::Collection.new
       out_of_keys = false
 
       if start_with = @options[:start_after]

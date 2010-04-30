@@ -3,7 +3,7 @@ require 'bundler'
 
 Bundler.setup
 
-require 'cassandra_object'
+require 'jussandra'
 require 'connection'
 
 require 'test/unit'

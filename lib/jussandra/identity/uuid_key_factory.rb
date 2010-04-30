@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   module Identity
     # Key factories need to support 3 operations
     class UUIDKeyFactory < AbstractKeyFactory

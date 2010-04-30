@@ -11,7 +11,7 @@ module ReverseStorage
 end
 
 
-class Customer < CassandraObject::Base
+class Customer < Jussandra::Base
   attribute :first_name,     :type => :string
   attribute :last_name,      :type => :string
   attribute :date_of_birth,  :type => :date
@@ -46,7 +46,7 @@ class Customer < CassandraObject::Base
   end
 end
 
-class Invoice < CassandraObject::Base
+class Invoice < Jussandra::Base
   attribute :number,     :type=>:integer
   attribute :total,      :type=>:float
   attribute :gst_number, :type=>:string
@@ -66,7 +66,7 @@ class Invoice < CassandraObject::Base
   key :uuid
 end
 
-class Payment < CassandraObject::Base
+class Payment < Jussandra::Base
   attribute :reference_number, :type => :string
   attribute :amount,           :type => :integer
 
@@ -75,12 +75,12 @@ end
 
 MockRecord = Struct.new(:key)
 
-class Person < CassandraObject::Base
+class Person < Jussandra::Base
   attribute :name, :type => :string
   attribute :age,  :type => :integer
 end
 
-class Appointment < CassandraObject::Base
+class Appointment < Jussandra::Base
   attribute :title,      :type => :string
   attribute :start_time, :type => :time
   attribute :end_time,   :type => :time_with_zone, :allow_nil => true

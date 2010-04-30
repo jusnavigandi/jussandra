@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BasicScenariosTest < CassandraObjectTestCase
+class BasicScenariosTest < JussandraTestCase
   def setup
     super
     @customer = Customer.create :first_name    => "Michael",
@@ -85,7 +85,7 @@ class BasicScenariosTest < CassandraObjectTestCase
   end
 
   test "setting a column_family" do
-    class Foo < CassandraObject::Base
+    class Foo < Jussandra::Base
       self.column_family = 'Bar'
     end
     assert_equal 'Bar', Foo.column_family
@@ -130,7 +130,7 @@ class BasicScenariosTest < CassandraObjectTestCase
 
   context "Model with no attributes" do
     setup do
-      class Empty < CassandraObject::Base
+      class Empty < Jussandra::Base
       end
     end
 
@@ -141,7 +141,7 @@ class BasicScenariosTest < CassandraObjectTestCase
 
   context "A model that allows nils" do
     setup do
-      class Nilable < CassandraObject::Base
+      class Nilable < Jussandra::Base
         attribute :user_id, :type => Integer, :allow_nil => true
       end
     end
@@ -159,7 +159,7 @@ class BasicScenariosTest < CassandraObjectTestCase
           nil
         end
       end
-      class JankyObject < CassandraObject::Base
+      class JankyObject < Jussandra::Base
         key JankyKeys.new
       end
       @object = JankyObject.new
@@ -195,7 +195,7 @@ class BasicScenariosTest < CassandraObjectTestCase
 
   context "setting valid consistency levels" do
     setup do
-      class Senate < CassandraObject::Base
+      class Senate < Jussandra::Base
         consistency_levels :write => :quorum, :read => :quorum
       end
     end
@@ -210,7 +210,7 @@ class BasicScenariosTest < CassandraObjectTestCase
     context "invalid write consistency" do
       should "raise an error" do
         assert_raises(ArgumentError) do
-          class BadWriter < CassandraObject::Base
+          class BadWriter < Jussandra::Base
             consistency_levels :write => :foo, :read => :quorum
           end
         end
@@ -220,7 +220,7 @@ class BasicScenariosTest < CassandraObjectTestCase
     context "invalid read consistency" do
       should "raise an error" do
         assert_raises(ArgumentError) do
-          class BadReader < CassandraObject::Base
+          class BadReader < Jussandra::Base
             consistency_levels :write => :quorum, :read => :foo
           end
         end

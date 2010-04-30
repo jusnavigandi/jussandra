@@ -1,7 +1,7 @@
 
-class CassandraObjectTestCase < ActiveSupport::TestCase
+class JussandraTestCase < ActiveSupport::TestCase
   def teardown
-    CassandraObject::Base.connection.clear_keyspace!
+    Jussandra::Base.connection.clear_keyspace!
   end
 
   def mock_invoice
@@ -9,7 +9,7 @@ class CassandraObjectTestCase < ActiveSupport::TestCase
   end
 
   def connection
-    CassandraObject::Base.connection
+    Jussandra::Base.connection
   end
   
   def assert_ordered(expected_object_order, actual_order, to_s_before_comparing = true)

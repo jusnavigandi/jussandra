@@ -1,4 +1,4 @@
-module CassandraObject
+module Jussandra
   class OneToManyAssociation
     def initialize(association_name, owner_class, options)
       @association_name  = association_name.to_s
@@ -11,7 +11,7 @@ module CassandraObject
     
     def find(owner, options = {})
       reversed = options.has_key?(:reversed) ? options[:reversed] : @options[:reversed]
-      cursor   = CassandraObject::Cursor.new(target_class, column_family, owner.key.to_s, @association_name, :start_after => options[:start_after], :reversed => reversed)
+      cursor   = Jussandra::Cursor.new(target_class, column_family, owner.key.to_s, @association_name, :start_after => options[:start_after], :reversed => reversed)
       cursor.find(options[:limit] || 100)
     end
     
@@ -89,7 +89,7 @@ module CassandraObject
     # @option options [String]  :start_after the key after which to start returning results
     # @option options [Boolean] :reversed (false or association default) return the results in reverse order
     # @option options [Integer] :limit the max number of results to return
-    # @return [Array<CassandraObject::Base>] an array of objects of type self#target_class
+    # @return [Array<Jussandra::Base>] an array of objects of type self#target_class
     #
     def all(options = {})
       @association.find(@owner, options)
@@ -100,7 +100,7 @@ module CassandraObject
     # association
     #
     # @param  [Hash] attributes the attributes with which to create the object
-    # @return [CassandraObject::Base] the newly created object
+    # @return [Jussandra::Base] the newly created object
     #
     def create(attributes)
       returning @association.target_class.create(attributes) do |record|

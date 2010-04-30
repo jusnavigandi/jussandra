@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DirtyTest < CassandraObjectTestCase
+class DirtyTest < JussandraTestCase
   def setup
     super
 
