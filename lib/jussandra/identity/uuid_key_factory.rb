@@ -2,7 +2,7 @@ module Jussandra
   module Identity
     # Key factories need to support 3 operations
     class UUIDKeyFactory < AbstractKeyFactory
-      class UUID < Cassandra::SimpleUUID::UUID
+      class UUID < SimpleUUID::UUID
         include Key
 
         def to_param
