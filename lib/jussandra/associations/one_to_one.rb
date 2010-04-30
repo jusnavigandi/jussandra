@@ -43,7 +43,7 @@ module Jussandra
     end
     
     def new_key
-      Cassandra::SimpleUUID::UUID.new
+      SimpleUUID::UUID.new
     end
     
     def set_inverse(owner, record)
