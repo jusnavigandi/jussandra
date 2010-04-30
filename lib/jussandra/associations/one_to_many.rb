@@ -23,7 +23,7 @@ module Jussandra
     end
     
     def new_key
-      Cassandra::UUID.new
+      Cassandra::SimpleUUID::UUID.new
     end
     
     def column_family
